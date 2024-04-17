@@ -1,0 +1,118 @@
+---
+const personalImageAlt = "Miguel Ángel";
+import Badge from "@/components/Badge.astro";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import GitHubIcon from "@/components/icons/technologies/tools/GitHub.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import SocialPill from "@/components/sections/hero/SocialPill.astro";
+---
+
+<div class="w-full">
+  <img
+    class="mx-auto rounded-full size-28 mb-4 border-4 border-white object-cover shadow-lg"
+    src="portfolio_dev_photo.webp"
+    alt={personalImageAlt}
+  />
+  <div class="flex justify-center items-center gap-4 mb-4">
+    <h1 class="text-3xl font-bold tracking-tight sm:text-5xl text-white">
+      <span id="typed-text"></span><span id="cursor">|</span>
+    </h1>
+
+    <a
+      href="https://www.linkedin.com/in/miguel-angel-candelario-barrones-254389205/"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center transition md:justify-center md:hover:scale-105"
+    >
+      <Badge>Disponible para trabajar</Badge>
+    </a>
+  </div>
+  <p class="mt-6 text-xl text-gray-300 text-center">
+    +5 años desarrollando aplicaciones web.<strong
+      class="text-sky-400 font-semibold"
+    >
+      Desarrollador Web.</strong
+    ><strong class="text-green-400 font-semibold">
+      Experto en desarrollar soluciones web sólidas.</strong
+    >
+    Me dedico a la creación de programas eficientes que resuelven problemas cotidianos.
+  </p>
+</div>
+
+<nav class="flex justify-center items-center flex-wrap gap-4 mt-8">
+  <SocialPill href="https://github.com/MiguelAngelCB">
+    <GitHubIcon class="size-5" />
+    Github
+  </SocialPill>
+  <SocialPill
+    href="https://www.linkedin.com/in/miguel-angel-candelario-barrones-254389205/"
+  >
+    <LinkedInIcon class="size-5" />
+    LinkedIn
+  </SocialPill>
+  <SocialPill href="mailto:mcandelariobarrones@gmail.com">
+    <MailIcon class="size-5" />
+    mcandelariobarrones@gmail.com
+  </SocialPill>
+</nav>
+<div class="absolute hidden lg:flex bottom-4 w-full justify-center">
+  <a
+    href="#proyectos"
+    class="flex gap-2 animate-bounce text-primary-500 dark:text-primary-400 font-bold"
+  >
+    Proyectos
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-5 h-5"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75"></path>
+    </svg>
+  </a>
+</div>
+
+<style>
+  /* Estilos para el cursor */
+  #cursor {
+    opacity: 1;
+    animation: blink 0.75s infinite;
+  }
+
+  /* Animación del cursor */
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+</style>
+<script is:inline>
+  const text = "Hey, soy Miguel Ángel";
+  const typingDelay = 100; // Delay entre caracteres
+
+  let charIndex = 0;
+
+  function type() {
+    if (charIndex < text.length) {
+      document.getElementById("typed-text").textContent +=
+        text.charAt(charIndex);
+      charIndex++;
+      setTimeout(type, typingDelay);
+    } else if (charIndex == text.length) {
+      document.getElementById("cursor").style.visibility = "hidden";
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(type, typingDelay);
+  });
+</script>

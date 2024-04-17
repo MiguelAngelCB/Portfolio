@@ -1,0 +1,71 @@
+---
+import TechnologyContainer from "@/components/sections/technologies/TechnologiesContainer.astro";
+import Angular from "../../icons/technologies/frontend/Angular.astro";
+import TypeScript from "@/components/icons/technologies/frontend/TypeScript.astro";
+import HTML from "@/components/icons/technologies/frontend/HTML.astro";
+import CSS from "@/components/icons/technologies/frontend/CSS.astro";
+import JavaScript from "@/components/icons/technologies/frontend/JavaScript.astro";
+import Tailwind from "@/components/icons/technologies/frontend/Tailwind.astro";
+import AstroIcon from "@/components/icons/technologies/frontend/AstroIcon.astro";
+
+const TECHNOLOGIES = [
+  {
+    name: "Angular",
+    background: "bg-red-900",
+    border: "border-red-600",
+    textColor: "text-white",
+    size: "size-10",
+    icon: Angular,
+  },
+  {
+    name: "Typescript",
+    background: "bg-sky-800",
+    border: "border-sky-600",
+    textColor: "text-white",
+    size: "size-10",
+    icon: TypeScript,
+  },
+  {
+    name: "HTML",
+    background: "bg-orange-700",
+    border: "border-orange-500",
+    textColor: "text-white",
+    size: "w-12 h-12",
+    icon: HTML,
+  },
+  {
+    name: "CSS",
+    background: "bg-blue-900",
+    border: "border-blue-700",
+    textColor: "text-white",
+    size: "size-12",
+    icon: CSS,
+  },
+  {
+    name: "JavaScript",
+    background: "bg-yellow-700",
+    border: "border-yellow-300",
+    textColor: "text-white",
+    size: "size-10",
+    icon: JavaScript,
+  },
+  {
+    name: "Tailwind",
+    background: "bg-sky-900",
+    border: "border-sky-600",
+    textColor: "text-white",
+    size: "size-11",
+    icon: Tailwind,
+  },
+  {
+    name: "Astro",
+    background: "bg-slate-950",
+    border: "border-black",
+    textColor: "text-white",
+    size: "size-11",
+    icon: AstroIcon,
+  },
+];
+---
+
+<TechnologyContainer TECHNOLOGIES={TECHNOLOGIES} section="frontend" />

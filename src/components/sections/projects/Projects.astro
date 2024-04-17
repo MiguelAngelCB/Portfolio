@@ -1,0 +1,107 @@
+---
+import GitHub from "../../icons/technologies/tools/GitHub.astro";
+import Tailwind from "../../icons/technologies/frontend/Tailwind.astro";
+import Link from "../../icons/Link.astro";
+import LinkButton from "../../sections/projects/LinkButton.astro";
+import Laravel from "@/components/icons/technologies/backend/Laravel.astro";
+import Mysql from "@/components/icons/technologies/backend/Mysql.astro";
+import Angular from "@/components/icons/technologies/frontend/Angular.astro";
+import TypeScript from "@/components/icons/technologies/frontend/TypeScript.astro";
+
+const TAGS = {
+  LARAVEL: {
+    name: "Laravel",
+    class: "bg-red-900 text-white",
+    icon: Laravel,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  MYSQL: {
+    name: "MYSQL",
+    class: "bg-sky-900 text-white",
+    icon: Mysql,
+  },
+  Angular: {
+    name: "Angular",
+    class: "bg-red-900 text-white",
+    icon: Angular,
+  },
+  TypeScript: {
+    name: "TypeScript",
+    class: "bg-sky-800 text-white",
+    icon: TypeScript,
+  },
+};
+const PROJECTS = [
+  {
+    title: "Carta Barbarossa - CRUD de la carta del restaurante Barbarossa",
+    description:
+      "Bienvenido a la plataforma de creación de categorías y platos para el restaurante Barbarossa. Desde entrantes hasta postres, aquí podrás diseñar un menú cautivador. Experimenta con ingredientes y técnicas para crear una experiencia gastronómica única y memorable. ¡Es hora de sorprender a tus clientes con tus creaciones culinarias!",
+    github: "https://github.com/MiguelAngelCB/Barbarossa-Carta.git",
+    image: "/projects/Barbarossa.webp",
+    link: "",
+    tags: [TAGS.LARAVEL, TAGS.MYSQL, TAGS.TAILWIND],
+  },
+  {
+    title: "HeroesApp - CRUD de Heroes",
+    description:
+      "Esta aplicación te brinda la oportunidad de crear héroes desde cero. Imagina y desarrolla personajes con poderes extraordinarios y personalidades fascinantes. Desde sus orígenes hasta sus aventuras, cada héroe es una obra maestra de tu imaginación. ¡Es hora de dar vida a tus propias leyendas!",
+    github: "https://github.com/MiguelAngelCB/Heroes.git",
+    link: "",
+    image: "/projects/Heroes.webp",
+    tags: [TAGS.Angular, TAGS.TypeScript],
+  },
+];
+---
+
+<div class="flex flex-col gap-12">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }, index) => (
+      <article
+        class={`flex-grow flex flex-col lg:flex-row p-10 containerTransparente gap-8 ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}
+      >
+        <div class="w-full flex justify-center">
+          <img
+            class="w-full h-full rounded-sm group-hover:scale-105 group-hover:brightness-110 transition-transform transform hover:scale-110 duration-300"
+            loading="lazy"
+            src={image}
+          />
+        </div>
+
+        <div class="w-full flex flex-col justify-center gap-3">
+          <h3 class="text-3xl font-bold text-gray-100 text-center">{title}</h3>
+          <div class="flex flex-wrap mt-2 space-x-2 justify-center">
+            {tags.map((tag) => (
+              <span
+                class={`flex items-center rounded-full text-sm ${tag.class} py-1 px-2`}
+              >
+                <tag.icon class="w-4 h-4 mr-2" />
+                {tag.name}
+              </span>
+            ))}
+          </div>
+          <div class="mt-2 text-gray-400 text-center text-base">
+            {description}
+          </div>
+          <footer class="flex items-center mt-4 space-x-4 justify-center">
+            {github && (
+              <LinkButton href={github}>
+                <GitHub class="w-6 h-6" />
+                Code
+              </LinkButton>
+            )}
+            {link && (
+              <LinkButton href={link}>
+                <Link class="w-4 h-4" />
+                Preview
+              </LinkButton>
+            )}
+          </footer>
+        </div>
+      </article>
+    ))
+  }
+</div>

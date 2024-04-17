@@ -1,0 +1,36 @@
+---
+import type { technology } from "../../../interfaces/technology.ts";
+interface Props {
+  section: string;
+  TECHNOLOGIES: Array<technology>;
+}
+
+const { TECHNOLOGIES, section } = Astro.props;
+---
+
+<div class=`${section}`>
+  <div class="containerTransparente p-10 gap-5 h-full w-full">
+    <div class="flex justify-center mb-5">
+      <h3 class="text-3xl font-bold underline capitalize">{section}</h3>
+    </div>
+    <div class="flex justify-center flex-wrap gap-5">
+      {
+        TECHNOLOGIES.map((tecnology) => (
+          <div class="basis-1/6 flex gap-1 flex-col items-center justify-center">
+            <div
+              class={`border-solid border-4 p-8 ${tecnology.border} overflow-hidden rounded-full size-16 text-xs flex justify-center items-center flex-col tecnologyBox bg-transparent`}
+            >
+              <div class={`backgroundFillAnimation ${tecnology.background}`} />
+              <div class={`flex items-center justify-center ${tecnology.size}`}>
+                <tecnology.icon class="w-full h-full" />
+              </div>
+            </div>
+            <div class={`flex justify-center items-center text-pretty text-center`}>
+              <span class=`${tecnology.textColor}`>{tecnology.name}</span>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+---
+import TechnologyContainer from "@/components/sections/technologies/TechnologiesContainer.astro";
+import GitHub from "../../icons/technologies/tools/GitHub.astro";
+import VSCode from "../../icons/technologies/tools/VSCode.astro";
+import Npm from "../../icons/technologies/tools/Npm.astro";
+import Postman from "../../icons/technologies/tools/Postman.astro";
+import Terminal from "../../icons/technologies/tools/Terminal.astro";
+
+const TECHNOLOGIES = [
+  {
+    name: "GitHub",
+    background: "bg-stone-950",
+    border: "border-black",
+    textColor: "text-white",
+    size: "size-10",
+    icon: GitHub,
+  },
+  {
+    name: "VS Code",
+    background: "bg-blue-900",
+    border: "border-sky-600",
+    textColor: "text-white",
+    size: "size-10",
+    icon: VSCode,
+  },
+  {
+    name: "Npm",
+    background: "bg-red-900",
+    border: "border-red-600",
+    textColor: "text-white",
+    size: "size-12",
+    icon: Npm,
+  },
+  {
+    name: "Postman",
+    background: "bg-orange-700",
+    border: "border-orange-500",
+    textColor: "text-white",
+    size: "size-12",
+    icon: Postman,
+  },
+  {
+    name: "Terminal",
+    background: "bg-zinc-950",
+    border: "border-black",
+    textColor: "text-white",
+    size: "size-12",
+    icon: Terminal,
+  },
+];
+---
+
+<TechnologyContainer TECHNOLOGIES={TECHNOLOGIES} section="utilidades" />

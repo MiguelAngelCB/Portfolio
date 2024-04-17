@@ -1,40 +1,31 @@
 ---
-import Layout from "@/layouts/Layout.astro"
+import Layout from "@/layouts/Layout.astro";
 
-import AboutMe from "@/components/AboutMe.astro"
-import Briefcase from "@/components/icons/Briefcase.astro"
-import CodeIcon from "@/components/icons/Code.astro"
-import Experience from "@/components/Experience.astro"
-import ProfileCheck from "@/components/icons/ProfileCheck.astro"
-import Projects from "@/components/Projects.astro"
-import SectionContainer from "@/components/SectionContainer.astro"
-import Hero from "@/components/Hero.astro"
+import AboutMe from "@/components/sections/AboutMe.astro";
+import CodeIcon from "@/components/icons/Code.astro";
+import TecnologyIcon from "@/components/icons/Technology.astro";
+import Tecnologies from "@/components/sections/technologies/Technologies.astro";
+import ProfileCheck from "@/components/icons/ProfileCheck.astro";
+import Projects from "@/components/sections/projects/Projects.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Hero from "@/components/sections/hero/Hero.astro";
 ---
 
 <Layout
-  title="Porfolio de midudev - Desarrollador y Programador Web con 15 años de experiencia"
-  description="Contrata a midudev para crear tu aplicación web o móvil. Desarrollador Web y Creador de Contenido. Especializado en crear aplicaciones únicas."
+  title="Portfolio de Miguel Ángel Candelario Barrones - Desarrollador Web"
+  description="Contacta con Miguel Ángel para crear tus programas a medida."
 >
   <main class="px-4">
-    <SectionContainer class="py-16 md:py-36">
-      <Hero>
-      </slot>
-    </Hero>
+    <SectionContainer
+      class="relative mx-auto container max-lg:pt-32 lg:pb-0 lg:h-screen overflow-hidden lg:w-[740px] lg:flex lg:flex-col lg:justify-center"
+    >
+      <Hero />
     </SectionContainer>
-    <div class="space-y-24">
-    <SectionContainer id="experiencia">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-      >
-        <Briefcase class="size-8" />
-        Experiencia laboral
-      </h2>
-      <Experience />
-    </SectionContainer>
-
+  </main>
+  <div class="px-4 lg:pt-16">
     <SectionContainer id="proyectos">
       <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+        class="flex mx-auto justify-center items-center mb-6 text-3xl font-semibold gap-x-3 text-white"
       >
         <CodeIcon class="size-7" />
         Proyectos
@@ -42,15 +33,23 @@ import Hero from "@/components/Hero.astro"
       <Projects />
     </SectionContainer>
 
+    <SectionContainer id="habilidades">
+      <h2
+        class="flex justify-center items-center mb-6 text-3xl font-semibold gap-x-3 text-white"
+      >
+        <TecnologyIcon class="size-7" />
+        Tecnologias
+      </h2>
+      <Tecnologies />
+    </SectionContainer>
     <SectionContainer id="sobre-mi">
       <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+        class="flex justify-center items-center mb-6 text-3xl font-semibold gap-x-3 text-white"
       >
-        <ProfileCheck class="size-8" />
+        <ProfileCheck class="size-7" />
         Sobre mí
       </h2>
       <AboutMe />
     </SectionContainer>
   </div>
-  </main>
 </Layout>

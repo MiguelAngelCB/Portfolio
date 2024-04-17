@@ -1,0 +1,132 @@
+---
+const navItems = [
+  // {
+  //   title: "Experiencia",
+  //   label: "experiencia",
+  //   url: "/#experiencia",
+  // },
+  {
+    title: "Proyectos",
+    label: "proyectos",
+    url: "/#proyectos",
+  },
+  {
+    title: "Sobre mí",
+    label: "sobre-mi",
+    url: "/#sobre-mi",
+  },
+  {
+    title: "Contacto",
+    label: "contacto",
+    url: "mailto:mcandelariobarrones@gmail.com",
+  },
+];
+---
+
+<header
+  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
+>
+  <nav
+    class="bg-opacity-5 max-md:backdrop-blur-sm bg-black fixed w-full z-20 top-0 left-0"
+  >
+    <div
+      class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+    >
+      <a href="/" class="flex items-center space-x-3">
+        <span class="self-center text-2xl font-bold whitespace-nowrap"
+          >GUTSUI</span
+        >
+      </a>
+      <div class="flex md:order-2 space-x-3 md:space-x-0">
+        <a
+          href="../../public/documents/CV - Miguel Ángel Candelario Barrones.pdf"
+          download
+          class="text-white bg-sky-600 hover:bg-sky-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >Descargar CV</a
+        >
+
+        <button
+          id="toggleMenuBtn"
+          type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden text-gray-400 hover:bg-gray-700"
+          data-collapse-toggle="navbar-sticky"
+          aria-controls="navbar-sticky"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15"></path>
+          </svg>
+        </button>
+      </div>
+      <div
+        class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 transition-all"
+        id="navbar-sticky"
+      >
+        <ul
+          class="flex flex-col items-center p-4 md:p-0 mt-4 font-medium border rounded-lg md:space-x-8 md:flex-row md:mt-0 md:border-0"
+        >
+          {
+            navItems.map((link, index) => (
+              <li class="max-md:p-4">
+                <a class="nav-link p-2" href={link.url}>
+                  <span class="nav-title">{link.title}</span>
+                  <span class="nav-hover" />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuLinks = document.querySelectorAll("#navbar-sticky a");
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        const navbarMenu = document.getElementById("navbar-sticky");
+        navbarMenu.classList.add("hidden");
+        const toggleMenuBtn = document.getElementById("toggleMenuBtn");
+        toggleMenuBtn.setAttribute("aria-expanded", "true");
+      });
+    });
+  });
+</script>
+<style>
+  .nav-link {
+    position: relative;
+    color: white;
+    text-decoration: none;
+  }
+
+  .nav-title {
+    z-index: 1; /* Asegura que el texto esté sobre la barra */
+  }
+
+  .nav-hover {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover .nav-hover {
+    width: 100%;
+  }
+</style>

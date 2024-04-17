@@ -1,0 +1,89 @@
+---
+import TechnologyContainer from "@/components/sections/technologies/TechnologiesContainer.astro";
+import PHP from "@/components/icons/technologies/backend/PHP.astro";
+import Laravel from "@/components/icons/technologies/backend/Laravel.astro";
+import Java from "@/components/icons/technologies/backend/Java.astro";
+import Python from "@/components/icons/technologies/backend/Python.astro";
+import NodeJS from "@/components/icons/technologies/backend/NodeJS.astro";
+import Mysql from "@/components/icons/technologies/backend/Mysql.astro";
+import Firebase from "@/components/icons/technologies/backend/Firebase.astro";
+import Docker from "@/components/icons/technologies/backend/Docker.astro";
+import MongoDB from "@/components/icons/technologies/backend/MongoDB.astro";
+
+const TECHNOLOGIES = [
+  {
+    name: "PHP",
+    background: "bg-indigo-800",
+    border: "border-indigo-600",
+    textColor: "text-white",
+    size: "size-12",
+    icon: PHP,
+  },
+  {
+    name: "Laravel",
+    background: "bg-red-900",
+    border: "border-red-600",
+    textColor: "text-white",
+    size: "size-11",
+    icon: Laravel,
+  },
+  {
+    name: "Java",
+    background: "bg-sky-900",
+    border: "border-amber-600",
+    textColor: "text-white",
+    size: "size-12",
+    icon: Java,
+  },
+  {
+    name: "Mysql",
+    background: "bg-sky-900",
+    border: "border-sky-800",
+    textColor: "text-white",
+    size: "size-10",
+    icon: Mysql,
+  },
+  {
+    name: "Python",
+    background: "bg-cyan-900",
+    border: "border-yellow-300",
+    textColor: "text-white",
+    size: "size-12",
+    icon: Python,
+  },
+  {
+    name: "NodeJS",
+    background: "bg-emerald-900",
+    border: "border-green-600",
+    textColor: "text-white",
+    size: "size-12",
+    icon: NodeJS,
+  },
+  {
+    name: "Firebase",
+    background: "bg-yellow-700",
+    border: "border-yellow-400",
+    textColor: "text-white",
+    size: "size-12",
+    icon: Firebase,
+  },
+  {
+    name: "Docker",
+    background: "bg-blue-900",
+    border: "border-sky-700",
+    textColor: "text-white",
+    size: "size-12",
+    icon: Docker,
+  },
+  {
+    name: "MongoDB",
+    background: "bg-emerald-900",
+    border: "border-emerald-600",
+    textColor: "text-white",
+    size: "size-12",
+    icon: MongoDB,
+  },
+];
+---
+
+<TechnologyContainer TECHNOLOGIES={TECHNOLOGIES} section="backend" />
