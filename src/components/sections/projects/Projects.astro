@@ -7,6 +7,10 @@ import Laravel from "@/components/icons/technologies/backend/Laravel.astro";
 import Mysql from "@/components/icons/technologies/backend/Mysql.astro";
 import Angular from "@/components/icons/technologies/frontend/Angular.astro";
 import TypeScript from "@/components/icons/technologies/frontend/TypeScript.astro";
+import React from "@/components/icons/technologies/frontend/React.astro";
+import JavaScript from "@/components/icons/technologies/frontend/JavaScript.astro";
+import MongoDB from "@/components/icons/technologies/backend/MongoDB.astro";
+import ExpressJS from "@/components/icons/technologies/backend/ExpressJS.astro";
 
 const TAGS = {
   LARAVEL: {
@@ -33,6 +37,26 @@ const TAGS = {
     name: "TypeScript",
     class: "bg-sky-800 text-white",
     icon: TypeScript,
+  },
+  React: {
+    name: "React",
+    class: "bg-sky-800 text-white",
+    icon: React,
+  },
+  JavaScript: {
+    name: "JavaScript",
+    class: "bg-yellow-800 text-white",
+    icon: JavaScript,
+  },
+  MongoDB: {
+    name: "MongoDB",
+    class: "bg-green-800 text-white",
+    icon: MongoDB,
+  },
+  ExpressJS: {
+    name: "ExpressJS",
+    class: "bg-black text-white",
+    icon: ExpressJS,
   },
 };
 const PROJECTS = [
@@ -63,6 +87,15 @@ const PROJECTS = [
     image: "/projects/mapbox.webp",
     tags: [TAGS.Angular, TAGS.TypeScript],
   },
+  {
+    title: "CalendarApp - Calendario con eventos",
+    description:
+      "CalendarApp es una aplicación web desarrollada con React.js, Express y MongoDB, que permite gestionar y organizar eventos a través de un calendario interactivo. Los usuarios pueden crear, editar y eliminar eventos de manera sencilla, con una interfaz dinámica y actualizaciones en tiempo real.",
+    github: "https://github.com/MiguelAngelCB/React-Mern-Calendar.git",
+    link: "",
+    image: "/projects/Calendar.webp",
+    tags: [TAGS.React, TAGS.JavaScript, TAGS.ExpressJS, TAGS.MongoDB],
+  },
 ];
 ---
 
@@ -82,7 +115,7 @@ const PROJECTS = [
 
         <div class="w-full flex flex-col justify-center gap-3">
           <h3 class="text-3xl font-bold text-gray-100 text-center">{title}</h3>
-          <div class="flex flex-wrap mt-2 space-x-2 justify-center">
+          <div class="flex flex-wrap mt-2 gap-2 justify-center">
             {tags.map((tag) => (
               <span
                 class={`flex items-center rounded-full text-sm ${tag.class} py-1 px-2`}

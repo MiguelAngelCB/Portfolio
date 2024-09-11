@@ -9,12 +9,16 @@ import ProfileCheck from "@/components/icons/ProfileCheck.astro";
 import Projects from "@/components/sections/projects/Projects.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import Hero from "@/components/sections/hero/Hero.astro";
+import Experience from "@/components/sections/experience/Experience.astro";
+import Briefcase from "@/components/icons/Briefcase.astro";
+import TitleSection from "@/components/sections/titleSection.astro";
 ---
 
 <Layout
   title="Portfolio de Miguel Ángel Candelario Barrones - Desarrollador Web"
   description="Contacta con Miguel Ángel para crear tus programas a medida."
 >
+  <a id="top"></a>
   <main class="px-4">
     <SectionContainer
       class="relative mx-auto container max-lg:pt-32 lg:pb-0 lg:h-screen overflow-hidden lg:w-[740px] lg:flex lg:flex-col lg:justify-center"
@@ -23,19 +27,24 @@ import Hero from "@/components/sections/hero/Hero.astro";
     </SectionContainer>
   </main>
   <div class="px-4 lg:pt-16">
+    <SectionContainer id="experiencia" class="lg:w-[1000px]">
+      <TitleSection>
+        <Briefcase class="size-7" />
+        Experiencia
+      </TitleSection>
+      <Experience />
+    </SectionContainer>
     <SectionContainer id="proyectos">
-      <h2
-        class="flex mx-auto justify-center items-center mb-6 text-3xl font-semibold gap-x-3 text-white"
-      >
+      <TitleSection>
         <CodeIcon class="size-7" />
         Proyectos
-      </h2>
+      </TitleSection>
       <Projects />
     </SectionContainer>
 
     <SectionContainer id="habilidades">
       <h2
-        class="flex justify-center items-center mb-6 text-3xl font-semibold gap-x-3 text-white"
+        class="flex justify-center items-center mb-8 text-3xl font-semibold gap-x-3 text-white"
       >
         <TecnologyIcon class="size-7" />
         Tecnologias
@@ -43,12 +52,10 @@ import Hero from "@/components/sections/hero/Hero.astro";
       <Tecnologies />
     </SectionContainer>
     <SectionContainer id="sobre-mi">
-      <h2
-        class="flex justify-center items-center mb-6 text-3xl font-semibold gap-x-3 text-white"
-      >
+      <TitleSection>
         <ProfileCheck class="size-7" />
         Sobre mí
-      </h2>
+      </TitleSection>
       <AboutMe />
     </SectionContainer>
   </div>
